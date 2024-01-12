@@ -1,7 +1,7 @@
-import instagram from '../../assets/Images/instagram.svg'
-import facebook from '../../assets/Images/facebook.svg'
-import twitter from '../../assets/Images/twitter.svg'
-import logo from '../../assets/Images/logo.png'
+import instagram from '../../assets/images/instagram.svg'
+import facebook from '../../assets/images/facebook.svg'
+import twitter from '../../assets/images/twitter.svg'
+import logo from '../../assets/images/logo.png'
 
 import { Logo, SFooter, Links } from './styles'
 

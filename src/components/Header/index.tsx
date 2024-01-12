@@ -1,5 +1,5 @@
-import logo from '../../assets/Images/logo.png'
-import background from '../../assets/Images/fundo.png'
+import logo from '../../assets/images/logo.png'
+import background from '../../assets/images/fundo.png'
 
 import {
   BackgroundImg,

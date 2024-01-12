@@ -1,5 +1,5 @@
 import { Card, Description, Head, Infos, Tags } from './styles'
-import star from '../../assets/Images/estrela.png'
+import star from '../../assets/images/estrela.png'
 import Tag from '../Tag'
 import Button from '../Button'
 
