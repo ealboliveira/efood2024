@@ -1,6 +1,5 @@
-import logo from '../../assets/images/logo.png'
-import background from '../../assets/images/fundo.png'
-import productImg from '../../assets/images/productImg.jpg'
+import logo from '../../assets/Images/logo.png'
+import background from '../../assets/Images/fundo.png'
 
 import {
   BackgroundImg,
@@ -8,7 +7,7 @@ import {
   Logo,
   Nav,
   Title,
-  BackgroundProductImg
+  LinksNav
 } from './styles'
 import { Link } from 'react-router-dom'
 
@@ -39,7 +38,7 @@ const Header = ({ category }: Props) => {
       <BackgroundImgPro style={{ backgroundImage: `url(${background})` }}>
         <div className="container">
           <Nav>
-            <p>Restaurantes</p>
+            <LinksNav to="/">Restaurantes</LinksNav>
             <Link to="/">
               <img src={logo} alt="EFOOD" />
             </Link>
@@ -47,7 +46,6 @@ const Header = ({ category }: Props) => {
           </Nav>
         </div>
       </BackgroundImgPro>
-      <BackgroundProductImg style={{ backgroundImage: `url(${productImg})` }} />
     </header>
   )
 }

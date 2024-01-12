@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
+import { Link } from 'react-router-dom'
 
 export const BackgroundImg = styled.div`
   width: 100%;
@@ -25,8 +26,6 @@ export const Title = styled.h1`
   margin: 0 414px 40px 414px;
 `
 
-//Header da página Profile
-
 export const BackgroundImgPro = styled.div`
   height: 164px;
   background-size: cover;
@@ -46,4 +45,9 @@ export const BackgroundProductImg = styled.div`
   height: 318px;
   background-size: cover;
   background-repeat: no-repeat;
+`
+
+export const LinksNav = styled(Link)`
+  text-decoration: none;
+  color: ${colors.lightPink};
 `
