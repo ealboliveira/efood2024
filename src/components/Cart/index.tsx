@@ -30,7 +30,7 @@ const Cart = () => {
 
   const getTotalPrice = () => {
     return items.reduce((acumulador, comida) => {
-      return (acumulador += comida.preco!)
+      return (acumulador += comida.preco)
     }, 0)
   }
 

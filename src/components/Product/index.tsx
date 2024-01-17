@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 
 import { add, open } from '../store/reducers/cart'
 
+import closeIcon from '../../assets/images/X.png'
+
 import {
   Card,
   Description,
@@ -61,7 +63,18 @@ const Product = ({ foto, nome, descricao, porcao, preco, id }: Menu) => {
           </div>
           <Infos>
             <div>
-              <span onClick={() => setModal({ isVisible: false })}>X</span>
+              <span onClick={() => setModal({ isVisible: false })}>
+                <img
+                  src={closeIcon}
+                  alt="Fechar"
+                  style={{
+                    width: '20px',
+                    height: '20px',
+                    marginTop: '-3px',
+                    marginRight: '5px'
+                  }}
+                />
+              </span>
               <h3>{nome}</h3>
               <p>{descricao}</p>
             </div>

@@ -10,7 +10,7 @@ type Props = {
 const ProductList = ({ products }: Props) => {
   return (
     <div className="container">
-      <List>
+      <List isProfilePage={window.location.pathname.includes('/profile/')}>
         {products.map((product) => (
           <Product
             id={product.id}

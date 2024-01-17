@@ -8,7 +8,7 @@ type Props = {
 
 const RestaurantsList = ({ restaurants }: Props) => (
   <div className="container">
-    <List>
+    <List isProfilePage={window.location.pathname.includes('/profile/')}>
       {restaurants.map((restaurant) => (
         <Restaurant
           key={restaurant.id}
