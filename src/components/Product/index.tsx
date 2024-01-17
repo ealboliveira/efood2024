@@ -1,13 +1,16 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../store/reducers/cart'
 
 import {
   Card,
   Description,
   Title,
   Img,
-  Modal,
   ModalContent,
-  Infos
+  Infos,
+  Modal
 } from './styles'
 
 import Button from '../Button'
@@ -15,7 +18,24 @@ import { Menu } from '../../pages/Profile'
 type ModalState = {
   isVisible: boolean
 }
-const Product = ({ foto, nome, descricao, porcao, preco }: Menu) => {
+
+const Product = ({ foto, nome, descricao, porcao, preco, id }: Menu) => {
+  const dispatch = useDispatch()
+
+  const menu: Menu = {
+    id,
+    foto,
+    nome,
+    descricao,
+    porcao,
+    preco
+  }
+
+  const addToCart = () => {
+    dispatch(add(menu))
+    dispatch(open())
+  }
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
@@ -46,8 +66,10 @@ const Product = ({ foto, nome, descricao, porcao, preco }: Menu) => {
               <p>{descricao}</p>
             </div>
             <div>
-              <p>Serve: de {porcao}</p>
-              <button>Adicionar ao carrinho - R$ ${preco}</button>
+              <p>Serve de: {porcao}</p>
+              <button onClick={addToCart}>
+                Adicionar ao carrinho - R$ ${preco}
+              </button>
             </div>
           </Infos>
         </ModalContent>

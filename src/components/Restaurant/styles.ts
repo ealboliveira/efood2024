@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
-import { SButton } from '../Button/styles'
+import { ButtonLink } from '../Button/styles'
+
 export const Card = styled.div`
   position: relative;
   width: 472px;
@@ -11,7 +12,7 @@ export const Card = styled.div`
     height: 217px;
     object-fit: cover;
   }
-  ${SButton} {
+  ${ButtonLink} {
     margin: 0 0 8px 8px;
   }
 `

@@ -1,20 +1,15 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
-import { ButtonLink, SButton } from '../Button/styles'
+import { ButtonLink } from '../Button/styles'
+
 export const Card = styled.div`
   width: 320px;
   height: 338px;
   color: ${colors.white};
   background-color: ${colors.lightPink};
-  ${SButton} {
-    max-width: 100%;
-    width: 95%;
+  ${ButtonLink} {
+    width: 304px;
     margin: 16px 0 8px 8px;
-    background-color: ${colors.whitePinkish};
-    color: ${colors.lightPink};
-    ${ButtonLink} {
-      color: ${colors.lightPink};
-    }
   }
 `
 export const Img = styled.img`
@@ -33,7 +28,31 @@ export const Description = styled.p`
   line-height: 22px;
   margin: 8px;
 `
-// Modal Style
+
+export const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  &.visible {
+    display: flex;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+`
+// Modal style ------------------------------------
+
 export const Modal = styled.div`
   position: fixed;
   top: 0;
@@ -98,7 +117,6 @@ export const ModalContent = styled.div`
     cursor: pointer;
   }
 `
-
 export const Infos = styled.div`
   display: flex;
   flex-direction: column;

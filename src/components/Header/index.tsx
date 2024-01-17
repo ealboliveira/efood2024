@@ -1,6 +1,11 @@
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../store'
+
+import { open } from '../store/reducers/cart'
+
 import logo from '../../assets/images/logo.png'
 import background from '../../assets/images/fundo.png'
-
 import {
   BackgroundImg,
   BackgroundImgPro,
@@ -9,13 +14,18 @@ import {
   Title,
   LinksNav
 } from './styles'
-import { Link } from 'react-router-dom'
-
 type Props = {
   category: 'home' | 'profile'
 }
 
 const Header = ({ category }: Props) => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   if (category === 'home') {
     return (
       <header>
@@ -32,7 +42,6 @@ const Header = ({ category }: Props) => {
       </header>
     )
   }
-
   return (
     <header>
       <BackgroundImgPro style={{ backgroundImage: `url(${background})` }}>
@@ -42,12 +51,11 @@ const Header = ({ category }: Props) => {
             <Link to="/">
               <img src={logo} alt="EFOOD" />
             </Link>
-            <p>0 produto(s) no carrinho</p>
+            <p onClick={openCart}>${items.length} produto(s) no carrinho</p>
           </Nav>
         </div>
       </BackgroundImgPro>
     </header>
   )
 }
-
 export default Header

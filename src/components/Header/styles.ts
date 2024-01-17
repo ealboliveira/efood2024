@@ -40,6 +40,10 @@ export const Nav = styled.nav`
   justify-content: space-between;
   padding-top: 40px;
   align-items: center;
+
+  p {
+    cursor: pointer;
+  }
 `
 export const BackgroundProductImg = styled.div`
   height: 318px;
