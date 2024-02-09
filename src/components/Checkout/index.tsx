@@ -47,7 +47,7 @@ const Checkout = () => {
         .min(5, 'Endereço inválido')
         .required('Endereço obrigatório'),
       zipCode: Yup.string()
-        .min(9, 'Cep inválido')
+        .min(8, 'Cep inválido')
         .max(9, 'Cep inválido')
         .required('Cep obrigatório'),
       number: Yup.string()
