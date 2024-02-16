@@ -1,4 +1,3 @@
-import Button from '../Button'
 import {
   Form,
   Title,
@@ -15,6 +14,8 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useState, useEffect } from 'react'
 import { usePurchaseMutation } from '../../services/api'
+import Button from '../Button'
+
 const Checkout = () => {
   const { isOrderOpen, items } = useSelector((state: RootReducer) => state.cart)
   const [purchase, { data }] = usePurchaseMutation()
@@ -56,12 +57,17 @@ const Checkout = () => {
       cardOwner: Yup.string().when((values, schema) =>
         continuarPagamento ? schema.required('O campo é obrigatório') : schema
       ),
-      cardNumber: Yup.string().when((values, schema) =>
-        continuarPagamento ? schema.required('O campo é obrigatório') : schema
-      ),
-      cardCode: Yup.string().when((values, schema) =>
-        continuarPagamento ? schema.required('O campo é obrigatório') : schema
-      ),
+      cardNumber: Yup.string()
+        .min(16, 'Número cartão invalido')
+        .max(19, 'Número cartão invalido')
+        .when((values, schema) =>
+          continuarPagamento ? schema.required('O campo é obrigatório') : schema
+        ),
+      cardCode: Yup.string()
+        .max(3, 'Cep inválido')
+        .when((values, schema) =>
+          continuarPagamento ? schema.required('O campo é obrigatório') : schema
+        ),
       expiresMonth: Yup.string().when((values, schema) =>
         continuarPagamento ? schema.required('O campo é obrigatório') : schema
       ),

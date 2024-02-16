@@ -21,6 +21,7 @@ export const Form = styled.form`
   margin: 0 8px;
   label {
     font-size: 14px;
+    font-weight: 700;
     color: ${colors.white};
   }
   input {
@@ -70,6 +71,7 @@ export const Cvv = styled.input`
 
 export const OrderMessage = styled.section`
   font-size: 14px;
+  font-weigth: 400;
   color: ${colors.white};
   margin: 0 8px 24px 8px;
 `
